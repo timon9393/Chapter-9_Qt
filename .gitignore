@@ -14,3 +14,4 @@ CTestTestfile.cmake
 _deps
 /**/*CMake*/**/*.sln
 /**/*CMake*/**/*.vcxproj*
+not_for_git/

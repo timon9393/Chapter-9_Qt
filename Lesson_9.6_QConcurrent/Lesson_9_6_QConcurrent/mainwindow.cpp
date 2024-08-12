@@ -86,13 +86,9 @@ void MainWindow::StartRace(void){
 
         future1 = QtConcurrent::run([this](){
             concurRace1->DoWork(&number, ui->rb_mutexOn->isChecked(), ui->sb_initNum->value());
+            }).then([this](){
+                concurRace2->DoWork(&number, ui->rb_mutexOn->isChecked(), ui->sb_initNum->value());
         });
-        future1.waitForFinished();
-
-        future2 = QtConcurrent::run([this](){
-            concurRace2->DoWork(&number, ui->rb_mutexOn->isChecked(), ui->sb_initNum->value());
-        });
-        future2.waitForFinished();
     }
 
     else{

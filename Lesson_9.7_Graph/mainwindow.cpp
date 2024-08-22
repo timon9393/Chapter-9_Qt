@@ -34,6 +34,7 @@ void MainWindow::plotData(QCustomPlot *customPlot, const QVector<double> &data)
 
     plotWindow->show();
 
+    customPlot->clearGraphs();
     customPlot->addGraph();
     customPlot->graph(0)->setData(x, data);
     customPlot->xAxis->setLabel("Time (ms)");
